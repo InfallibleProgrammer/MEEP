@@ -1,5 +1,5 @@
-The hosted website is avaliable at the following link:
-http://meepeb20.7suua5gmdm.us-west-1.elasticbeanstalk.com/
+
+This project was done as a group. The involved members are Akash Vachhani(github owner), Udit Chophla, Vincent chu, and Joseph Abero. The project was originally private on bitbucket so the SQL credentials can remain private. The credentials have been removed and can be changed to the local sql file attached. 
 
 To run the flask app, navigate to the Application Folder:
 
@@ -14,3 +14,6 @@ flask run
 A localhost:5000 will be started and you can access the website there.
 
 An account will need to be created to access other pages of the website.
+
+
+
