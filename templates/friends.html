@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}Friends{% endblock %}
+
+{% block content %}
+    {{ super() }}
+    <div class="all_friends">
+        <div class="title">
+            <h3>Current Friends</h3>
+        </div>
+        {% for friend in friendsList %}
+            <a href="/profile/{{friend.get_username()}}">
+                <div class="friend" id="{{friend.get_uid()}}">
+                    <p-name>{{ friend.get_fname() }}
+                    {{ friend.get_lname() }} <br/></p-name>
+                    <p>@{{ friend.get_username() }} <br/></p>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+
+    <div class="all_users">
+        <div class="title">
+            <h3>All Users</h3>
+        </div>
+        {% for user in userList %}
+            <a href="/profile/{{user.get_username()}}">
+                <div class="user" id="{{user.get_uid()}}">
+                    <p-name>{{ user.get_fname() }}
+                    {{ user.get_lname() }} <br/></p-name>
+                    <p>@{{ user.get_username() }} <br/></p>
+                </div>
+            </a>
+        {% endfor %}
+{% endblock %}

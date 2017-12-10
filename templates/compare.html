@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block title %}Calendar{% endblock %}
+
+{% block content %}
+	<div class="compare">
+        <div class = "title">
+            <h1>Compared Schedule</h1>
+        </div>
+
+        <div class="change_date">
+            <form method="POST">
+                <input type="hidden" name="friend_uid" value="{{friend.get_uid()}}"/>
+                <input class="choose" type="date" name="date" value="{{current_date}}"/>
+                <input class="change" type="submit" value="Change Date"/>
+            </form>
+        </div>
+        <div class = "date">
+            <h2>{{strftime("%A %B %d, %Y", strptime(current_date, "%Y-%m-%d"))}}</h2>
+        </div>
+        <div class = "names" style = "width: 100%;">
+                <h2 style="display: inline-block; float: left; margin-left: 30%;">{{current_user.get_fname()}}</h2>
+            <h2 style="display: inline-block; float: right; margin-right: 30%;">{{friend.get_fname()}}</h2>
+        </div>
+        <div class="calendar">
+            {% for event in eventsList1 %}      
+                <a href="/event/{{event.get_eid()}}">
+                    <div class="event_left" style="{{event.get_style()}};">
+                        <h1>{{ event.get_name() }}</h1>
+                        <h2>{{ strftime("%B %d, %Y", strptime(event.get_date(), "%Y-%m-%d")) }}</h2>
+                        <h3>{{ strftime("%I:%M %p", strptime(event.get_stime(), "%H:%M")) }}-
+                        {{ strftime("%I:%M %p", strptime(event.get_etime(), "%H:%M")) }}</h3>
+                        {{ event.get_location() }} <br/><br/
+                        <italics>{{ event.get_description() }} <br/></italics>
+                    </div>
+                </a>
+            {% endfor %}  
+            {% for event in eventsList2 %}                            
+                <a href="/event/{{event.get_eid()}}">
+                    <div class="event_right" style="{{event.get_style()}};">
+                        <h1>{{ event.get_name() }}</h1>
+                        <h2>{{ strftime("%B %d, %Y", strptime(event.get_date(), "%Y-%m-%d")) }}</h2>
+                        <h3>{{ strftime("%I:%M %p", strptime(event.get_stime(), "%H:%M")) }}-
+                        {{ strftime("%I:%M %p", strptime(event.get_etime(), "%H:%M")) }}</h3>
+                        {{ event.get_location() }} <br/><br/>
+                        <italics>{{ event.get_description() }} <br/></italics>
+                    </div>
+                </a>
+            {% endfor %}       
+            {% for t in times %}
+                <div class="time_block" id="{{t['id_num']}}"
+                    style="background-color: {{t['color']}}"">
+                    <div class="time">
+                        <h4>{{t['time']}}</h4>
+                    </div>                                       
+                </div>
+            {% endfor %}
+        </div>
+    </div> 
+{% endblock %}

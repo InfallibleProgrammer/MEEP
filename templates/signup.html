@@ -1,0 +1,33 @@
+<!--
+• FORMAT NICELY
+https://www.w3schools.com/css/css_form.asp
+• user maxlength to limit input
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up for MEEP</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link rel="stylesheet" href="/static/stylesheet.css" type="text/css">
+</head>
+<body class="background">
+    <h1>Please Sign Up</h1>
+    <form action = "" method = 'POST'>
+        <input type="text" placeholder="First Name" name="user_fname" required>
+        <input type="text" placeholder="Last Name" name="user_lname" required>
+        <br/>
+        <input type="text" placeholder="Username" name="user_username" required>
+        
+        <input type="password" placeholder="Password" name="user_password" required>
+        <br/>
+        <input type="email" placeholder="Email" name="user_email" required>
+        <br/>
+        <input type="submit" value="submit" />
+    </form>
+    {% if error != None %}
+        {{error}}
+    {% endif %}
+</body>
+</html>

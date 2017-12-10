@@ -1,0 +1,26 @@
+<!--
+• FORMAT NICELY
+https://www.w3schools.com/css/css_form.asp
+• Focused inputs
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to MEEP</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body class = "background">
+        <h1>LOGIN</h1>
+        <h2>Login to an existing account</h2>
+        <form action="" method="POST">
+            <input type="text" placeholder="Username" name = "user_username" required> <br/>
+            <input type="password" placeholder="Password" name="user_password" required> <br/>
+            <input type="submit" value="Submit">
+            </form>
+            {% if error != None %}
+                {{error}}
+            {% endif %}
+</body>
+</html>

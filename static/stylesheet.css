@@ -1,0 +1,745 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+
+input[type=text], input[type=password], input[type=email], select{
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button[type=button], input[type=submit]{
+    background-color: blue;
+    border: 1px solid black;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+input[type=submit].change{
+    padding: 0px;
+    background-color: blue;
+    border: 1px solid black;
+    color: white;
+    margin: 0 auto;
+    display: inline;
+    height: 40px;
+    margin-left: 30px;
+    width: 100px;
+}
+
+input[type=date].choose{
+    height: 40px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+li:last-child {
+    float: right;
+}
+
+.new_event{
+    margin: auto;
+    width: 50%;
+}
+
+.new_event button{
+    display: block;
+    background: gold;
+    color: black;
+    font-weight: bold;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.new_event a:link, .profile a:hover, .profile a:visited, .profile a:active {
+    text-decoration: none;
+    color: black;
+}
+
+
+.home a:link, .profile a:hover, .profile a:visited, .profile a:active {
+    text-decoration: none;
+    color: black;
+}
+
+.welcome{
+    margin: auto;
+    width: 50%;
+}
+
+.welcome h1{
+    text-align: center;
+}
+
+.home{
+    width: 90%;
+    margin: auto;
+}
+
+.home .title{
+    padding-left: 20px;
+    border: 1px solid black;
+    background: blue;
+}
+
+.home .event {
+    padding-left: 10px;
+    padding-left: 10px;
+    border: 1px solid black;
+    border-top:0px;
+    height: auto;
+}
+
+.home .event .day {
+    padding-left: 10px;
+    width: 15%;
+    min-height: inherit;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: text-top;
+    height: 100px;
+    border-right: 1px solid black;
+}
+
+.home .event .time {
+    width: 30%;
+    padding-left: 10px;
+    min-height: inherit;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: text-top;
+}
+
+.home .event .name {
+    width: 50%;
+    min-height: inherit;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: text-top;
+    padding-left: 30px;
+    padding-top: 15px;
+}
+
+.home .event p-name{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.home h2{
+    color: white;
+}
+
+.profile {
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.profile .user {
+    border: 1px solid black;
+    width: 100%;
+    float: left;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.profile .events {
+    height: 400px;
+    margin-top: 5px;
+    border: 2px solid black;
+    width: 50%;
+    float: left;
+    overflow: auto;
+}
+
+.profile .friends {
+    border: 2px solid black;
+    height: 400px;
+    margin-top: 5px;
+    width: 40%;
+    float: right;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.profile a:link, .profile a:hover, .profile a:visited, .profile a:active {
+    text-decoration: none;
+    color: black;
+}
+
+
+.profile .friends p {
+    margin: 0px;
+    padding: 0px;
+}
+
+.friends .title{
+    border-bottom: 2px solid black;
+    padding: 10px;
+    background-color: gold;
+}
+
+.friends .other_users{
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    padding-left: 40px;
+}
+
+
+.profile p-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0px;
+}
+
+.friends p-name{
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0px;
+}
+
+.events .title {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: blue;
+}
+
+.events .title p {
+    color: white;
+    font-size: 18px;
+    margin-left: 5px;
+}
+
+.events .details{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: aliceblue;
+    border: 1px solid darkgrey;
+    height: 50px;
+}
+
+.details .name {
+    width: 40%;
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.details .time {
+    width: 40%
+    margin-left: 10%;
+    margin-right: 10px;
+    text-align: right;
+    display: inline-block;
+    float: right;
+}
+
+.events a:link, .events a:hover, .events a:visited, .events a:active {
+    text-decoration: none;
+    color: black;
+}
+
+.home a:link, .home a:hover, .home a:visited, .home a:active {
+    color: black;
+}
+
+.calendar a:link, .calendar a:hover, .calendar a:visited, .calendar a:active {
+    text-decoration: none;
+    color: black;
+}
+
+
+.details p-italics {
+    font-style: italic;
+    font-color: black;
+}
+.details p-bold {
+    font-size: 16px;
+    font-weight: bold;
+    font-color: black;
+}
+
+
+@media only screen and (max-width:620px) {
+  /* For mobile phones: */
+  .profile .events, .profile .friends{
+    width:100%;
+  }
+}
+
+.time_block {
+    width: 100%;
+    border: 1px solid black;
+    height: 48px;
+    overflow: visible;
+    padding: 0;
+    margin: 0;
+}
+
+.time_block .time {
+    width: 100px;
+    height: 48px;
+    display: inline-block;
+    vertical-align: text-top;
+    border-right: 1px dashed black;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.time_block .event {
+    width: calc(100% - 150px); 
+    vertical-align: top;
+    overflow: hidden;
+    display: inline-block;
+    background-color: blue;
+    border-radius: 20px;
+    border: 2px solid darkgreen;
+}
+
+.compare .calendar {
+    width: 100%;
+}
+.compare .calendar .event_left{
+    width: 30%;
+    margin-left: 70px;
+    border: 2px solid black;
+    background-color: skyblue;
+    overflow: hidden;
+    border-radius: 20px;
+    position: absolute;
+    left: 10%;
+    text-align: center;
+}
+
+
+.compare .calendar .event_right{
+    width: 30%;
+    border: 2px solid black;
+    background-color: skyblue;
+    overflow: hidden;
+    border-radius: 20px;
+    position: absolute;
+    right: 10%;
+    text-align: center;
+}
+
+.compare .title{
+    text-align: center;
+}
+
+.compare .date{
+    border: 1px solid black;
+    padding-left: 20px;
+    border: 1px solid black;
+    border-bottom: 2px solid black;
+    background: blue;
+    color: white;
+}
+
+.compare .names{
+    margin: 0px;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-left: 2px solid black;
+    border-right: 1px solid black;
+    text-align: center;
+}
+
+
+
+.date{
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 10px;
+    padding-left: 15px;
+    border: 1px solid black;
+    background: gold;
+}
+
+.change_date {
+    margin: 0 auto;
+    width: 35%;
+    margin-top: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.calendar .event{
+    left:15%;
+    border: 2px solid black;
+    background-color: skyblue;
+    overflow: hidden;
+    border-radius: 20px;
+    position: absolute;
+    width: calc(80% - 150px);
+    margin-left: 60px;
+    color: black; 
+    text-align: center;
+}
+
+.calendar {
+    margin-left: 15px;
+    margin-right: 15px;
+    overflow-y: scroll;
+    margin-top: 20;
+    height: 80vh;
+    position: relative;
+    border: 1px solid black;
+}
+
+
+.compare {
+    overflow: hidden;
+}
+
+.all_friends{
+    border: 1px solid black;
+    border-bottom: 2px solid black;
+    margin: auto;
+    margin-top: 10px;
+    width: 50%;
+}
+
+.all_friends .title{
+    padding-left: 20px;
+    border: 1px solid black;
+    border-bottom: 2px solid black;
+    background: gold;
+}
+
+.all_friends .friend{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    padding-left: 20px;
+}
+
+.all_friends p-name{
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    padding: 0px;
+}
+
+.all_friends p{
+    color: black;
+    padding: 0px;
+    margin: 0px;
+}
+
+.all_friends a:link, .calendar a:hover, .calendar a:visited, .calendar a:active {
+    text-decoration: none;
+    color: black;
+}
+
+.all_users{
+    border: 1px solid black;
+    border-bottom: 2px solid black;
+    margin: auto;
+    margin-top: 10px;
+    width: 50%;
+    margin-top: 100px;
+}
+
+.all_users .title{
+    padding-left: 20px;
+    border: 1px solid black;
+    border-bottom: 2px solid black;
+    background: blue;
+    color: white;
+}
+
+.all_users .user{
+    padding-top: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    padding-left: 20px;
+}
+
+.all_users p-name{
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    padding: 0px;
+}
+
+.all_users p{
+    color: black;
+    padding: 0px;
+    margin: 0px;
+}
+
+.all_users a:link, .calendar a:hover, .calendar a:visited, .calendar a:active {
+    text-decoration: none;
+    color: black;
+}
+
+.edit_event{
+    border: 1px solid black;
+    padding: 10px;
+    width: 50%;
+    margin: auto;
+    margin-top: 15px;
+}
+
+
+.edit_event .name{
+    padding-bottom: 10px;
+}
+
+.edit_event .date{
+    border: none;
+    background: white;
+    margin: 0px;
+    padding: 0px;
+    padding-bottom: 10px;
+}
+
+.edit_event .start_time{
+    padding-bottom: 10px;
+}
+
+.edit_event .end_time{
+    padding-bottom: 10px;
+}
+
+.edit_event .location{
+    padding-bottom: 10px;
+}
+
+.edit_event input{
+    border: 1px solid black;
+    border-radius: 3px;
+    width: 100%;
+}
+
+
+.edit_event textarea{
+    width: 100%;
+    min-height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.edit_event .name input{
+    margin: 0px;
+    width: 100%;
+    padding: 10px;
+    padding-left: 20px;
+}
+
+.edit_event .date input{
+    min-width: 200px;
+    padding: 10px;
+    padding-left: 20px;
+}
+
+.edit_event .start_time input{
+    min-width: 20px;
+    padding: 10px;
+    padding-left: 20px;
+}
+
+.edit_event .end_time input{
+    min-width: 20px;
+    padding: 10px;
+    padding-left: 20px;
+}
+
+.edit_event .location input{
+    margin-left: 0px;
+    padding: 10px;
+    padding-left: 20px;
+}
+
+.edit_event .description input{
+    margin: auto;
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.view_event{
+    border: 1px solid black;
+    width: 50%;
+    margin: auto;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.view_event input{
+    width: 50%; 
+
+}
+
+.view_event .name{
+    padding-bottom: 10px;
+}
+
+.view_event .date{
+    border: none;
+    background: white;
+    margin: 0px;
+    padding: 0px;
+    padding-bottom: 10px;
+}
+
+.view_event .time{
+    padding-bottom: 10px;
+}
+
+.view_event .location{
+    padding-bottom: 10px;
+}
+
+.view_event p-data{
+    font-weight: bold;
+    text-align: right;
+}
+
+.view_event .description p-data{
+    font-size: 16px;
+}
+
+h4 {
+    margin: 0;
+    vertical-align: top;
+}
+
+italics{
+    font-style: italic;
+}
+
+.background {
+    background-image: url("https://static.pexels.com/photos/547114/pexels-photo-547114.jpeg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+}
+
+.page {
+    background-image: url("https://mgcreativedesign.files.wordpress.com/2014/11/website-design-background.png");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding-top: 100px;
+    text-align: center;
+}
+
+.rw-wrapper{
+    width: 80%;
+    position: relative;
+    margin: 110px auto 0 auto;
+    font-family: 'Bree Serif';
+    padding: 10px;
+    padding-left: 425px;
+}
+
+.rw-sentence{
+    margin: 0;
+    text-align: left;
+    text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
+}
+
+.rw-sentence span{
+    color: #444;
+    white-space: nowrap;
+    font-size: 200%;
+    font-weight: normal;
+}
+
+.rw-words{
+    display: inline;
+    text-indent: 10px;
+}
+
+.rw-words span{
+    position: absolute;
+    opacity: 0;
+    overflow: hidden;
+    width: 100%;
+    color: #6b969d;
+}
+
+.rw-words-1 span{
+    animation: rotateWordsFirst 18s linear infinite 0s;
+}
+.rw-words-2 span{
+    animation: rotateWordsSecond 18s linear infinite 0s;
+}
+.rw-words span:nth-child(2) { 
+    animation-delay: 3s; 
+    color: #6b889d;
+}
+.rw-words span:nth-child(3) { 
+    animation-delay: 6s; 
+    color: #6b739d; 
+}
+.rw-words span:nth-child(4) { 
+    animation-delay: 9s; 
+    color: #7a6b9d;
+}
+.rw-words span:nth-child(5) { 
+    animation-delay: 12s; 
+    color: #8d6b9d;
+}
+.rw-words span:nth-child(6) {  
+    animation-delay: 15s; 
+    color: #9b6b9d;
+}
+
+@keyframes rotateWordsFirst {
+    0% { opacity: 1; animation-timing-function: ease-in; height: 0px; }
+    8% { opacity: 1; height: 60px; }
+    19% { opacity: 1; height: 60px; }
+    25% { opacity: 0; height: 60px; }
+    100% { opacity: 0; }
+}
+

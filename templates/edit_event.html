@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title%}Edit Event{%endblock%}
+
+{% block content %}
+    {{ super() }}
+    <div class="edit_event">
+        <form method="POST">
+            <div class = "title">
+                <h2>Edit Event Details</h2>
+            </div>
+            <div class="name">
+                <label for="event_name">Name:</label>
+                <input type="text" name="event_name" value="{{event.get_name()}}"> <br/>
+            </div>
+            
+            <div class="date">
+                <label for="event_date">Date:</label>
+                <input type="date" name="event_date" value="{{event.get_date()}}"> <br/>
+            </div>
+
+            <div class="start_time">
+                <label for="event_stime">Start Time:</label>
+                <input type="time" name="event_stime" value="{{event.get_stime()}}">
+            </div>
+
+            <div class="end_time">
+                <label for="event_etime">End Time:</label>
+                <input type="time" name="event_etime" value="{{event.get_etime()}}"> <br/>
+            </div>
+
+            <div class="location">
+                <label for="event_location">Location:</label>
+                <input type="text" name="event_location" value="{{event.get_location()}}"> <br/>
+            </div>
+
+            <div class="description">
+                <label for="event_description">Description</label> <br/>
+                <textarea name="event_description">{{event.get_description()}}</textarea> <br/>
+                <input type = "submit" value = "Save Changes" />
+            </div>
+        </form>
+    </div>
+{% endblock %}
+
+<!--
+• Format nicely
+• End date, add by an hour
+-->

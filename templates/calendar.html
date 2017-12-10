@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="/static/stylesheet.css">
+
+{% extends "layout.html" %}
+
+{% block title %}Calendar{% endblock %}
+
+{% block content %}
+    {{ super() }}
+    <div class="change_date">
+        <form method="POST">
+            <input class="choose" type="date" name="date" value="{{current_date}}"/>
+            <input class="change" type="submit" value="Change Date"/>
+        </form>
+    </div>
+    <div class="date">
+        <h2>{{strftime("%A %B %d, %Y", strptime(current_date, "%Y-%m-%d"))}}</h2>
+    </div>
+    <div class="calendar">
+        {% for event in eventsList %}
+            <a href="/event/{{event.get_eid()}}">
+                <div class="event" style="{{event.style}}">
+                    <h1>{{ event.get_name() }}</h1>
+                    <h2>{{ strftime("%B %d, %Y", strptime(event.get_date(), "%Y-%m-%d")) }}</h2>
+                    <h3>{{ strftime("%I:%M %p", strptime(event.get_stime(), "%H:%M")) }}-
+                    {{ strftime("%I:%M %p", strptime(event.get_etime(), "%H:%M")) }}</h3>
+                    {{ event.get_location() }} <br/><br/>
+                    <italics>{{ event.get_description() }} <br/></italics>
+                </div>
+            </a>
+        {% endfor %}
+
+        {% for hour in range(24) %}
+            {% for minute in range(0, 60, 15) %}
+                <div class="time_block" id="_{{"{:02}{:02}".format(hour, minute)}}">
+                    <div class="time">
+                        <h4>{{strftime("%I:%M %p", strptime("{:02}:{:02}".format(hour, minute), "%H:%M"))}}</h4>
+                    </div>                                      
+                </div>
+            {% endfor %}
+        {% endfor %}
+    </div>
+{% endblock %}

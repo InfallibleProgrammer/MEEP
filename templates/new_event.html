@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title%}New Event{%endblock%}
+
+{% block content %}
+    {{ super() }}
+    <div class="new_event">
+        <form method="POST">
+            Name <input type="text" name="event_name" required><br/>
+            Date <input type="date" name="event_date" value="{{date}}" required> <br />
+            Start Time <input type="time" name="event_stime" value="{{stime}}" required> <br/>
+            End Time <input type="time" name="event_etime" value="{{etime}}" required> <br />
+            Location <input type="text" name="event_location"> <br />
+            Description <textarea name="event_description"></textarea> <br/>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+{% endblock %}

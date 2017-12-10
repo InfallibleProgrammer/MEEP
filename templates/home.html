@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    {{ super() }}
+    <div class ="welcome">
+        <h1>Welcome, {{ current_user.get_fname() }}! <br/></h1>
+    </div>
+
+    <div class="new_event">
+        <a href="/new_event">
+            <button type="button">Create New Event</button>
+        </a>
+    </div>
+
+    <div class="home">
+        <div class="title">
+            <h2>Upcoming Events</h2>
+        </div>
+        {% for event in eventsList %}
+            <a href="/event/{{event.get_eid()}}">
+                <div class="event">
+                    <div class="day">
+                        <p>{{ strftime("%A", strptime(event.get_date(), "%Y-%m-%d")) }}</p>
+                    </div>
+                    <div class="time">
+                        <p>{{ strftime("%B %d, %Y", strptime(event.get_date(), "%Y-%m-%d")) }}</p>
+                        <p>{{ strftime("%I:%M %p", strptime(event.get_stime(), "%H:%M")) }} - {{ strftime("%I:%M %p", strptime(event.get_etime(), "%H:%M")) }}</p>
+                    </div>
+                    <div class="name">
+                        <p-name>{{ event.get_name() }}</p-name>
+                    </div>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+<!--
+• Build Calendar, Daily View, (Weekly View?)
+• Friends Search Bar, add friend (Datalist)
+-->

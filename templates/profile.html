@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block title %}Profile{%endblock%}
+
+{% block content %}
+    {{ super() }}
+    <div class="profile"> 
+        
+        <div class="user">
+            <p-name>{{ user.get_fname() }}
+            {{ user.get_lname() }} </p-name><br/>
+            @{{ user.get_username() }} <br/>
+
+            {% if current_user.get_username() != user.get_username() %}
+            
+                {% if friend_status %}
+                    <form method='POST'>
+                        <input type="hidden" name="friend_status" value="unfriend"/>
+                        <input type="submit" value="Unfriend"/>
+                    </form>
+                    <form action='/compare/#_0800' method='POST'>
+                        <input type="hidden" name="friend_uid" value="{{ user.get_uid() }}"/>
+                        <input type="submit" value="Compare"/>
+                    </form>
+                {% else %}
+                    <form method='POST'>
+                        <input type="hidden" name="friend_status" value="friend"/>
+                        <input type="submit" value="Add as Friend"/>
+                    </form>
+                {% endif %}            
+        {% endif %}
+        </div>
+
+        <div class="events">
+            <div class="title">
+                <p>Upcoming Events</p>
+            </div>
+                {% if friend_status %}        
+                    {% for event in eventsList %}
+                        <a href="/event/{{event.get_eid()}}">
+                            <div class="details" id="{{event.get_eid()}}">
+                            
+                                <div class="name">
+                                    <p-bold>{{ event.get_name() }}</p-bold> <br/>
+                                    <p-italics>{{ event.get_location() }}</p-italics>
+                                </div>
+                                <div class="time">
+                                    {{ strftime("%B %d, %Y", strptime(event.get_date(), "%Y-%m-%d")) }} <br/>
+                                    {{ strftime("%I:%M %p", strptime(event.get_stime(), "%H:%M")) }} - 
+                                    {{ strftime("%I:%M %p", strptime(event.get_etime(), "%H:%M")) }} <br/>
+                                </div>
+                            </div>
+                        </a>
+                    {% endfor %}
+                {% else %}
+                <p>Add as friend to view this user's events</p>
+                {% endif %}
+        </div>
+
+        <div class="friends">
+            <div class="title">
+                <p>Friends</p>
+            </div>
+            {% for friend in friendsList %}
+                <a href="/profile/{{friend.get_username()}}">
+                    <div class="other_users" id="{{friend.get_uid()}}">
+                        <p-name>{{ friend.get_fname() }}
+                        {{ friend.get_lname() }} </p-name>
+                        <p>@{{ friend.get_username() }} <br/></p>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
+
+<!--
+• Unfriend option based on UID
+• Compare button
+• Implement Upcoming events, limit to X number of events
+-->

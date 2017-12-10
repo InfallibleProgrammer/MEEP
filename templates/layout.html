@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    {% endblock %}
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/calendar#_0800">Calendar</a></li>
+        <li><a href="/profile/{{ current_user.get_username() }}">Profile</a></li>
+        <li><a href="/friends">Friends</a></li>
+        <li><a href="/compare#_0800">Compare</a></li>
+        <li><a href="/logout">Logout</a></li>
+    </ul>
+</nav>
+{% block content %}
+{% endblock %}
+</body>
+</html>
+
+<!--
+• ADD LOGOUT BUTTON BASED ON LOGIN STATUS
+• ADD NAV BAR, HOME, PROFILE, EVENTS
+• FOOTER
+• Profile Username
+-->
